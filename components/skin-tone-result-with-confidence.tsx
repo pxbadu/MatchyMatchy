@@ -37,8 +37,8 @@ export function SkinToneResultWithConfidence({
   onReset,
   isDemo = false,
 }: SkinToneResultWithConfidenceProps) {
-  // Format confidence as percentage
   const confidencePercent = Math.round(confidence * 100)
+  console.log("Scanner Accuracy:", confidencePercent + "%")
   
   // Determine confidence level color
   const getConfidenceColor = () => {
@@ -103,10 +103,9 @@ export function SkinToneResultWithConfidence({
             </div>
             <div className="space-y-2">
               <div className="flex items-center justify-between">
-                <span className="text-sm">AI Confidence</span>
-                <span className="text-sm font-medium">{confidencePercent}%</span>
+                <span className="text-sm">Scanner Accuracy</span>
               </div>
-              <Progress className={`h-2 ${getConfidenceColor()}`} value={confidencePercent} />
+                <Progress className={`h-2 ${getConfidenceColor()}`} value={confidencePercent} />
               
               {isDemo && (
                 <div className="mt-2 text-sm text-yellow-800 bg-yellow-50 p-2 rounded border border-yellow-200">
