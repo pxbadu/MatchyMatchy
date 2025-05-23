@@ -39,6 +39,8 @@ export function SkinToneResultWithConfidence({
 }: SkinToneResultWithConfidenceProps) {
   // Format confidence as percentage
   const confidencePercent = Math.round(confidence * 100)
+  console.log("Certainty Percent:", confidencePercent + "%")
+
   
   // Determine confidence level color
   const getConfidenceColor = () => {
