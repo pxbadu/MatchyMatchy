@@ -60,7 +60,7 @@ export function SkinToneResultWithConfidence({
         </div>
         <CardDescription>
           {isDemo ? 
-            "This is a simulated result due to low confidence in the analysis." : 
+            "This is a simulated result due to low certainty in the analysis." : 
             "Based on your image, we've analyzed your skin tone."}
         </CardDescription>
       </CardHeader>
@@ -86,8 +86,8 @@ export function SkinToneResultWithConfidence({
                     <TooltipContent>
                       <p className="max-w-xs">
                         {isDemo 
-                          ? "This result is a best guess due to low confidence. Factors like lighting, background, or image quality can affect the analysis." 
-                          : "Confidence reflects how certain the AI is about this classification."}
+                          ? "This result is a best guess due to low certainty. Factors like lighting, background, or image quality can affect the analysis." 
+                          : "Certainty reflects how certain the AI is about this classification."}
                       </p>
                     </TooltipContent>
                   </Tooltip>
@@ -103,8 +103,7 @@ export function SkinToneResultWithConfidence({
             </div>
             <div className="space-y-2">
               <div className="flex items-center justify-between">
-                <span className="text-sm">AI Confidence</span>
-                <span className="text-sm font-medium">{confidencePercent}%</span>
+                <span className="text-sm">AI Certainty</span>
               </div>
               <Progress className={`h-2 ${getConfidenceColor()}`} value={confidencePercent} />
               
